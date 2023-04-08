@@ -1,0 +1,123 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ccp</title>
+    <style>
+        body {
+            margin: 0px;
+        }
+        #main {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            border: 1px solid black;
+            width: 500px;
+            height: 102px;
+        }
+        #includeratio {
+            position: absolute;
+            left: 520px;
+            top : 10px;
+        }
+        .box {
+            --ratio-width: 100;
+            position: absolute;
+            margin: 0px;
+            padding: 0px;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            border: 1px solid black;
+        }
+        input {
+            width: calc(100% - 2px);
+            text-align: center;
+        }
+        .hr {
+            width: calc(100% - 1px);
+            height: 0px;
+            position:relative;
+            top: 0px;
+            border: 1px solid black;
+        }
+        select {
+            position: absolute;
+            top: 120px;
+        }
+        #inputType {
+            left: 10px;
+        }
+        #outputType {
+            left: 440px;
+        }
+        .mm {
+            position: absolute;
+            width: 100px;
+            top: 120px; 
+        }
+        #sigFigs {
+            position: absolute;
+            width: 100px;
+            top: 140px;
+            left: 140px;
+        }
+        #lSigFigs {
+            position: absolute;
+            top: 140px;
+            left: 10px;
+        }
+        #mmCalcDiv {
+            position: absolute;
+            top: 200px;
+            left: 10px;
+            border: 1px solid gold;
+            padding: 10px;
+        }
+        #mmSelect {
+            position: relative;
+            top: 0px;
+            left: 0px;
+        }
+        #mmText {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <span style="left: 0%;" class="box" id="inputBox"><input id="input" value="______"><br><br>↑Input↑</span>
+        <span style="left: 20%;" class="box" id="tomole"><span id="toMoleTop">?</span><div class="hr"></div><span id="toMoleBottom">?</span></span>
+        <span style="left: 40%;" class="box" id="ratio"><input id="ratioTop" value="______"><br><div class="hr"></div><input id="ratioBottom" value="______"><br><br>↑Molar ratio↑</span>
+        <span style="left: 60%;" class="box" id="fromemole"><span id="fromMoleTop">?</span><div class="hr"></div><span id="fromMoleBottom">?</span></span>
+        <span style="left: 80%;" class="box" id="outputBox"><span id="output">?</span><br><br>↑Output↑</span>
+    </div>
+    <button id="includeratio">Include molar ratio?</button>
+    <select id="inputType">
+        <option value="Litres">Litres</option>
+        <option value="Grams">Grams</option>
+        <option value="Parts">Parts</option>
+    </select>
+    <input id="mmInput" class="mm" style="left: 80px;" value="Molar mass:" hidden>
+    <select id="outputType">
+        <option value="Litres">Litres</option>
+        <option value="Grams">Grams</option>
+        <option value="Parts">Parts</option>
+    </select>
+    <input id="mmOutput" class="mm" style="left: 510px;" value="Molar mass:" hidden>
+    <span id="lSigFigs">Signifigant Figures:</span><span id="sigFigs">?</span>
+    <div id="mmCalcDiv">
+        <span id="mmLabel">Molar Mass Calculation:</span>
+        <br>
+        <select id="mmSelect">
+            <option value="NaN">Select A Value</option>
+        </select><b> : </b><span id="mmCalcOutput">?</span>
+        <br>
+        <input id="mmText" value="Enter the contents of the molecule! (no parentheses, Eg. C5H8)"><b> : </b><span id="mmCalcTextOutput">?</span>
+    </div>
+    <script src="PeriodicTableJSON.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
